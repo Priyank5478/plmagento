@@ -1,0 +1,19 @@
+<?php
+    /** @var $this \WeSupply\Toolbox\Block\Orders */
+
+$wsHelper = $this->helper('WeSupply\Toolbox\Helper\Data');
+$cspNonceProvider = $wsHelper->getCspNonceProvider();
+?>
+<div class="loading-container">
+    <p><?php echo __('Loading order(s). Please wait.') ?></p>
+    <div class="loading-image"></div>
+</div>
+<div id="ordersview-container" class="embedded-iframe-container"></div>
+<script <?php if ($cspNonceProvider) echo ' nonce="' .  $cspNonceProvider->generateNonce() . '" ' ?>>
+    require(['jquery', 'loadIframe' ],
+        function ($, loadIframe) {
+            $(function () {
+                loadIframe.load('<?php echo $this->getIframeUrl(); ?>', 'ordersview-container');
+            });
+        });
+</script>

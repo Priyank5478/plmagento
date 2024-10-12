@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui/etc/ui_configuration.xsd">
+    <dataSource name="ticket_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">MyRacehorse\Admgrid\Ui\Component\DataProvider</argument>
+            <argument name="primaryFieldName" xsi:type="string">ticket_id</argument>
+            <argument name="requestFieldName" xsi:type="string">ticket_id</argument>
+        </argument>
+    </dataSource>
+
+    <columns name="ticket_columns">
+        <column name="ticket_id">
+            <settings>
+                <label>Ticket ID</label>
+            </settings>
+        </column>
+        <column name="ticket_subject">
+            <settings>
+                <label>Subject</label>
+            </settings>
+        </column>
+        <!-- Add more columns as needed -->
+    </columns>
+</listing>

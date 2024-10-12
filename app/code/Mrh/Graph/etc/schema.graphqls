@@ -1,0 +1,12 @@
+type Query
+{
+    Testdata (
+        id: Int @doc(description: "Student ID")
+        name: String @doc(description: "Student name") 
+    ): TestdataOutput @resolver(class: "Mrh\Graph\Model\Resolver\Testdata) @doc(description:"Student data")
+}
+type TestdataOutput
+{
+    id : Int
+    name : String
+}

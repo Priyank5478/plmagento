@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Copyright © Magento, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="customer">
+        <fieldset name="password_management" sortOrder="4000">
+            <settings>
+                <label translate="true">Password Management</label>
+            </settings>
+            <field name="new_password" sortOrder="2000" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">new_password</item>
+                        <item name="component" xsi:type="string">SetuBridge_ChangeCustomerpwbyadmin/js/form/element/new-password</item>
+                        <item name="elementTmpl" xsi:type="string">SetuBridge_ChangeCustomerpwbyadmin/form/element/password</item>
+                    </item>
+                </argument>
+                <settings>
+                    <dataType>password</dataType>
+                    <label translate="true">New Password</label>
+                    <dataScope>new_password</dataScope>
+                </settings>
+            </field>
+            <field name="current_user_password" sortOrder="3000" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">current_user_password</item>
+                        <item name="elementTmpl" xsi:type="string">SetuBridge_ChangeCustomerpwbyadmin/form/element/password</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                        <item name="component" xsi:type="string">SetuBridge_ChangeCustomerpwbyadmin/js/form/element/current-user-password</item>
+                    </item>
+                </argument>
+                <settings>
+                    <dataType>password</dataType>
+                    <label translate="true">Current User Identity Verification</label>
+                    <dataScope>current_user_password</dataScope>
+                    <notice translate="true">Please enter current admin user password</notice>
+                </settings>
+            </field>
+        </fieldset>
+    </fieldset>
+</form>
