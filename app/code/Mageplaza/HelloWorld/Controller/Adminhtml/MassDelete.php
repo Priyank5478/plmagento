@@ -29,7 +29,8 @@ class MassDelete extends Action
     public function execute()
     {
         try {
-            $collection = $this->filter->getCollection($this->collectionFactory->create());
+            $coolect = $this->collectionFactory->create();
+            $collection = $this->filter->getCollection($coolect);
 
             $count = 0;
             foreach ($collection as $model) {
